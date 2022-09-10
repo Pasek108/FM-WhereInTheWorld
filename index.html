@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Frontend Mentor | Countries API</title>
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body class="dark">
+    <header>
+      <div class="logo">Where in the world?</div>
+
+      <div class="buttons">
+        <div class="game-button"></div>
+        <div class="theme-button"></div>
+      </div>
+    </header>
+
+    <main class="">
+      <section class="countries">
+        <header>
+          <div class="searchbar">
+            <i class="fas fa-search"></i>
+            <input type="text" value="Search for a country..." placeholder="Search for a country..." />
+          </div>
+
+          <div class="buttons">
+            <div class="sort">
+              <div class="select">
+                <span>Sort alphabetically</span>
+                <i class="fas fa-caret-down"></i>
+                <i class="fas fa-caret-up"></i>
+              </div>
+
+              <div class="options">
+                <div class="option reset">None</div>
+                <div class="divider">By name</div>
+                <div class="option">A-Z</div>
+                <div class="option">Z-A</div>
+                <div class="divider">By population</div>
+                <div class="option">Ascending</div>
+                <div class="option">Descending</div>
+              </div>
+            </div>
+
+            <div class="filter">
+              <div class="select">
+                <span>Filter by Region</span>
+                <i class="fas fa-caret-down"></i>
+                <i class="fas fa-caret-up"></i>
+              </div>
+
+              <div class="options">
+                <div class="option reset">None</div>
+                <div class="option">Africa</div>
+                <div class="option">Americas</div>
+                <div class="option">Antarctic</div>
+                <div class="option">Asia</div>
+                <div class="option">Europe</div>
+                <div class="option">Oceania</div>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <section></section>
+      </section>
+
+      <section class="country-details hidden">
+        <header>
+          <div class="back"><i class="fa-solid fa-arrow-left-long"></i> Back</div>
+        </header>
+
+        <section>
+          <div class="flag"></div>
+
+          <div class="info">
+            <div class="row">
+              <div class="name"></div>
+            </div>
+
+            <div class="row">
+              <div class="native-name">
+                <div class="text">Native Name:</div>
+                <div class="value"></div>
+              </div>
+
+              <div class="population">
+                <div class="text">Population:</div>
+                <div class="value"></div>
+              </div>
+
+              <div class="region">
+                <div class="text">Region:</div>
+                <div class="value"></div>
+              </div>
+
+              <div class="sub-region">
+                <div class="text">Sub Region:</div>
+                <div class="value"></div>
+              </div>
+
+              <div class="capital">
+                <div class="text">Capital:</div>
+                <div class="value"></div>
+              </div>
+
+              <div class="top-level-domain">
+                <div class="text">Top Level Domain:</div>
+                <div class="value"></div>
+              </div>
+
+              <div class="currencies">
+                <div class="text">Currencies:</div>
+                <div class="value"></div>
+              </div>
+
+              <div class="languages">
+                <div class="text">Languages:</div>
+                <div class="value"></div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="border-countries">
+                <div class="text">Border Countries:</div>
+                <div class="value"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </section>
+
+      <section class="game">
+        <div class="close"><i class="fa-solid fa-xmark"></i> Close</div>
+
+        <div class="start">
+          <header>
+            <div>Choose gamemode</div>
+
+            <div class="stats">
+              <div class="points">
+                <div class="text">Points:</div>
+                <div class="value">0</div>
+              </div>
+
+              <div class="correct">
+                <div class="text"><i class="fa-regular fa-circle-check"></i></div>
+                <div class="value">0</div>
+              </div>
+
+              <div class="wrong">
+                <div class="text"><i class="fa-regular fa-circle-xmark"></i></div>
+                <div class="value">0</div>
+              </div>
+            </div>
+          </header>
+
+          <div class="options">
+            <div class="option">Name by flag</div>
+            <div class="option">Name by capital</div>
+            <div class="option">Flag by name</div>
+            <div class="option">Flag by capital</div>
+            <div class="option">Capital by name</div>
+            <div class="option">Capital by flag</div>
+          </div>
+        </div>
+
+        <div class="question hidden">
+          <header>
+            <div class="text"></div>
+            <div class="hint"></div>
+          </header>
+
+          <div class="options"></div>
+
+          <div class="controls">
+            <div class="back">
+              <i class="fa-solid fa-arrow-left-long"></i>
+              Change gamemode
+            </div>
+
+            <div class="next">
+              Next question
+              <i class="fa-solid fa-arrow-right-long"></i>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <template class="country-card-template">
+      <div class="country-card">
+        <div class="flag"></div>
+
+        <div class="info">
+          <div class="name"></div>
+
+          <div class="population">
+            <div class="text">Population:</div>
+            <div class="value"></div>
+          </div>
+
+          <div class="region">
+            <div class="text">Region:</div>
+            <div class="value"></div>
+          </div>
+
+          <div class="capital">
+            <div class="text">Capital:</div>
+            <div class="value"></div>
+          </div>
+        </div>
+      </div>
+    </template>
+
+    <script src="/js/Searchbar.js"></script>
+    <script src="/js/Sort.js"></script>
+    <script src="/js/Filter.js"></script>
+    <script src="/js/CountryDetails.js"></script>
+    <script src="/js/CountriesOverwiev.js"></script>
+    <script src="/js/CountriesAPI.js"></script>
+    <script src="/js/Game.js"></script>
+
+    <script src="/js/script.js" async></script>
+  </body>
+</html>

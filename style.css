@@ -1,0 +1,730 @@
+.button {
+  background-color: var(--element-color);
+  color: var(--text-color);
+  border-radius: 0.25rem;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.4);
+  text-align: center;
+  cursor: pointer;
+}
+.button:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+* {
+  box-sizing: border-box;
+  font-family: 'Nunito Sans', sans-serif;
+}
+.light {
+  --bg-color: hsl(0, 0%, 98%);
+  --element-color: hsl(0, 0%, 100%);
+  --text-color: hsl(200, 15%, 8%);
+  --input-color: hsl(0, 0%, 52%);
+}
+.light .theme-button:before {
+  content: "\f185";
+}
+.light .theme-button::after {
+  content: "Dark mode";
+}
+.dark {
+  --bg-color: hsl(207, 26%, 17%);
+  --element-color: hsl(209, 23%, 22%);
+  --text-color: hsl(0, 0%, 100%);
+  --input-color: hsl(0, 0%, 98%);
+}
+.dark .theme-button:before {
+  content: "\f186";
+}
+.dark .theme-button::after {
+  content: "Light mode";
+}
+body {
+  width: 100vw;
+  padding: 0;
+  margin: 0;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  overflow-x: hidden;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+body::-webkit-scrollbar {
+  display: none;
+}
+.hidden {
+  display: none !important;
+}
+body > header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: auto;
+  bottom: auto;
+  z-index: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--element-color);
+  width: 100%;
+  height: 4.5rem;
+  padding: 1rem 4vw;
+  font-size: 1.5rem;
+  font-weight: 800;
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.4);
+}
+body > header .logo {
+  cursor: pointer;
+}
+body > header .buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: 600;
+}
+body > header .buttons .game-button,
+body > header .buttons .theme-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  margin-left: 1rem;
+  border: 1px solid var(--text-color);
+  border-radius: 10rem;
+  cursor: pointer;
+}
+body > header .buttons .game-button:hover,
+body > header .buttons .theme-button:hover {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+body > header .buttons .game-button:before,
+body > header .buttons .theme-button:before {
+  font-family: "Font Awesome 6 Free";
+  margin-right: 0.5rem;
+}
+body > header .buttons .game-button:before {
+  content: "\f11b";
+}
+body > header .buttons .game-button::after {
+  content: "Game";
+}
+main {
+  width: 100vw;
+  height: calc(100vh - 4.5rem);
+  overflow-y: scroll;
+  padding: 4vw;
+  padding-top: 0;
+  margin-top: 4.5rem;
+}
+main.game_on .countries,
+main.game_on .country-details {
+  filter: blur(8px);
+}
+main.game_on .game {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+main::-webkit-scrollbar {
+  width: 0.75rem;
+}
+main::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.4);
+}
+main::-webkit-scrollbar-thumb {
+  background: #0449d2;
+}
+main::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+.countries header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 7vh 0;
+}
+.countries header .searchbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--element-color);
+  color: var(--text-color);
+  border-radius: 0.25rem;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.4);
+  text-align: center;
+  cursor: pointer;
+  width: 30vw;
+  padding: 0 0.75rem;
+  font-size: 1rem;
+}
+.countries header .searchbar:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.countries header .searchbar:hover {
+  background-color: var(--element-color);
+}
+.countries header .searchbar i {
+  width: 10%;
+  text-align: center;
+  margin-right: 0.75rem;
+  color: var(--text-color);
+}
+.countries header .searchbar input {
+  background: none;
+  width: 90%;
+  padding: 0.75rem 0;
+  border: none;
+  font-size: 1rem;
+  color: var(--input-color);
+}
+.countries header .searchbar input:focus {
+  outline: none;
+}
+.countries header .buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.countries header .buttons .sort,
+.countries header .buttons .filter {
+  position: relative;
+  top: auto;
+  left: auto;
+  right: auto;
+  bottom: auto;
+  z-index: 0;
+  font-weight: 600;
+}
+.countries header .buttons .sort.active .options,
+.countries header .buttons .filter.active .options {
+  display: block;
+}
+.countries header .buttons .sort.active .fa-caret-up,
+.countries header .buttons .filter.active .fa-caret-up {
+  display: inline-block !important;
+}
+.countries header .buttons .sort.active .fa-caret-down,
+.countries header .buttons .filter.active .fa-caret-down {
+  display: none !important;
+}
+.countries header .buttons .sort .select,
+.countries header .buttons .filter .select {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--element-color);
+  border-radius: 0.25rem;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.4);
+  text-align: center;
+  cursor: pointer;
+  color: var(--text-color);
+  min-width: 13rem;
+  padding: 0.75rem 1rem;
+  margin-left: 0.75rem;
+}
+.countries header .buttons .sort .select:hover,
+.countries header .buttons .filter .select:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.countries header .buttons .sort .select:hover,
+.countries header .buttons .filter .select:hover {
+  background-color: var(--element-color);
+}
+.countries header .buttons .sort .select .fa-caret-up,
+.countries header .buttons .filter .select .fa-caret-up {
+  margin-left: 1rem;
+  display: none;
+}
+.countries header .buttons .sort .select .fa-caret-down,
+.countries header .buttons .filter .select .fa-caret-down {
+  margin-left: 1rem;
+  display: inline-block;
+}
+.countries header .buttons .sort .options,
+.countries header .buttons .filter .options {
+  position: absolute;
+  top: 0;
+  left: 0.75rem;
+  right: auto;
+  bottom: auto;
+  z-index: -1;
+  background-color: var(--element-color);
+  width: calc(100% - 0.75rem);
+  padding-top: 3rem;
+  border-radius: 0.25rem;
+  box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.2);
+  display: none;
+}
+.countries header .buttons .sort .options .divider,
+.countries header .buttons .filter .options .divider {
+  color: var(--text-color);
+  background-color: rgba(32, 162, 254, 0.595);
+  padding: 0.5rem 0.75rem;
+}
+.countries header .buttons .sort .options .option,
+.countries header .buttons .filter .options .option {
+  padding: 0.5rem 1.5rem;
+  cursor: pointer;
+}
+.countries header .buttons .sort .options .option:hover,
+.countries header .buttons .filter .options .option:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.countries header .buttons .sort .options .option.reset,
+.countries header .buttons .filter .options .option.reset {
+  border-bottom: 1px solid var(--text-color);
+}
+.countries section {
+  display: grid;
+  grid-template-columns: repeat(4, 20vw);
+  column-gap: 4vw;
+  row-gap: 4vw;
+}
+.countries section span {
+  position: absolute;
+  top: auto;
+  left: auto;
+  right: auto;
+  bottom: auto;
+  z-index: -1;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 40vh;
+  width: 92vw;
+  font-size: 2rem;
+  font-weight: 800;
+}
+.countries section .country-card {
+  background-color: var(--element-color);
+  border-radius: 0.5rem;
+  width: 100%;
+  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+.countries section .country-card .flag {
+  width: 100%;
+  aspect-ratio: 1.7;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.countries section .country-card .info {
+  padding: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+.countries section .country-card .info .name {
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+.countries section .country-card .info .name:hover {
+  text-decoration: underline;
+}
+.countries section .country-card .info > div:not(.name) {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  height: 1.75rem;
+}
+.countries section .country-card .info > div:not(.name) .text {
+  white-space: nowrap;
+  font-weight: 600;
+  margin-right: 0.5rem;
+}
+.country-details header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 7vh 0;
+}
+.country-details header .back {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--element-color);
+  color: var(--text-color);
+  border-radius: 0.25rem;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.4);
+  text-align: center;
+  cursor: pointer;
+  min-width: 7.5vw;
+  padding: 0.5rem 1.75rem 0.5rem 1.5rem;
+  font-size: 1rem;
+}
+.country-details header .back:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.country-details header .back i {
+  margin-right: 0.75rem;
+  font-size: 1.1rem;
+}
+.country-details section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.country-details section .flag {
+  width: 40%;
+  aspect-ratio: 1.5;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.country-details section .info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 53%;
+  height: 50vh;
+}
+.country-details section .info .row {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  height: 15vh;
+}
+.country-details section .info .row:nth-child(2) {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  height: 20vh;
+}
+.country-details section .info .row > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  height: 1.75rem;
+}
+.country-details section .info .row > div .text {
+  white-space: nowrap;
+  font-weight: 600;
+  margin-right: 0.5rem;
+}
+.country-details section .info .row .name {
+  font-size: 2rem;
+  font-weight: 800;
+}
+.country-details section .info .row .border-countries .value {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.country-details section .info .row .border-countries .value > div {
+  background-color: var(--element-color);
+  color: var(--text-color);
+  border-radius: 0.25rem;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.4);
+  text-align: center;
+  cursor: pointer;
+  min-width: 7.5vw;
+  padding: 0.25rem 1.5rem;
+  margin: 0.25rem 0.5rem;
+  font-size: 1rem;
+}
+.country-details section .info .row .border-countries .value > div:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.game {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: auto;
+  bottom: auto;
+  z-index: 0;
+  background-color: var(--bg-color);
+  width: 100vw;
+  height: 100vh;
+  padding: 4vw;
+  display: none;
+}
+.game .close {
+  position: absolute;
+  top: 17vh;
+  left: 4vw;
+  right: auto;
+  bottom: auto;
+  z-index: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--element-color);
+  color: var(--text-color);
+  border-radius: 0.25rem;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.4);
+  text-align: center;
+  cursor: pointer;
+  min-width: 7.5vw;
+  padding: 0.5rem 1.75rem 0.5rem 1.5rem;
+  font-size: 1rem;
+}
+.game .close:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.game .close i {
+  margin-right: 0.75rem;
+  font-size: 1.1rem;
+}
+.game .options {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 50vw;
+}
+.game .options .option {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--element-color);
+  color: var(--text-color);
+  border-radius: 0.25rem;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.4);
+  text-align: center;
+  cursor: pointer;
+  width: 20vw;
+  padding: 1rem;
+  margin: 0.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+.game .options .option:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.game .options .option img {
+  display: none;
+}
+.game .options .option.correct {
+  color: green;
+  border: 1px solid green;
+}
+.game .options .option.wrong {
+  color: red;
+  border: 1px solid red;
+  pointer-events: none;
+}
+.game .start {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.game .start header {
+  margin: 5vh 0;
+  font-size: 3rem;
+  font-weight: 800;
+  text-align: center;
+}
+.game .start header .stats {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+.game .start header .stats > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 0 1rem;
+}
+.game .start header .stats > div .text {
+  margin-right: 0.5rem;
+}
+.game .start header .stats .correct {
+  color: green;
+}
+.game .start header .stats .wrong {
+  color: red;
+}
+.game .question:not(.hidden) {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.game .question:not(.hidden).answered .option {
+  pointer-events: none;
+}
+.game .question:not(.hidden).answered .next {
+  background-color: var(--element-color) !important;
+  color: var(--text-color) !important;
+  border-radius: 0.25rem !important;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.4) !important;
+  text-align: center !important;
+  cursor: pointer !important;
+  pointer-events: all !important;
+}
+.game .question:not(.hidden).answered .next:hover {
+  background-color: rgba(0, 0, 0, 0.1) !important;
+}
+.game .question:not(.hidden) header {
+  margin-top: 10vh;
+  font-size: 3rem;
+  font-weight: 800;
+  text-align: center;
+}
+.game .question:not(.hidden) header .hint {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 30vh;
+}
+.game .question:not(.hidden) header .hint img {
+  height: 80%;
+}
+.game .question:not(.hidden) .options > .option.img {
+  padding: 0;
+}
+.game .question:not(.hidden) .options > .option.img img {
+  display: block;
+  height: 4rem;
+}
+.game .question:not(.hidden) .controls {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 50vw;
+  margin-top: 3rem;
+}
+.game .question:not(.hidden) .controls > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--element-color);
+  color: var(--text-color);
+  border-radius: 0.25rem;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.4);
+  text-align: center;
+  cursor: pointer;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+}
+.game .question:not(.hidden) .controls > div:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.game .question:not(.hidden) .controls > div i {
+  margin: 0 0.5rem;
+}
+.game .question:not(.hidden) .controls .next {
+  color: gray;
+  background-color: rgba(0, 0, 0, 0.1);
+  pointer-events: none;
+}
+@media only screen and (max-width: 1150px) {
+  .countries section {
+    grid-template-columns: repeat(3, 27.66vw);
+  }
+  .country-details section {
+    flex-direction: column;
+  }
+  .country-details section .flag {
+    width: 100%;
+  }
+  .country-details section .info {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 870px) {
+  .countries header {
+    flex-direction: column;
+  }
+  .countries header .searchbar {
+    width: 100%;
+  }
+  .countries header .buttons {
+    width: 100%;
+    margin-top: 1rem;
+  }
+  .countries header .buttons .select {
+    min-width: 43vw !important;
+    margin-left: 0 !important;
+  }
+  .countries header .buttons .options {
+    left: 0 !important;
+    width: 100% !important;
+  }
+  .countries section {
+    grid-template-columns: repeat(2, 43vw);
+  }
+  .game .options {
+    width: 90vw;
+  }
+  .game .options .option {
+    width: 40vw;
+  }
+  .game .controls {
+    width: 80vw !important;
+  }
+}
+@media only screen and (max-width: 560px) {
+  header .buttons > div:before {
+    width: 2rem;
+    text-align: center;
+    margin-right: 0 !important;
+  }
+  header .buttons > div:after {
+    display: none;
+  }
+  .countries section {
+    grid-template-columns: 90vw;
+  }
+  .country-details section {
+    flex-direction: column;
+  }
+  .country-details section .flag {
+    width: 100%;
+  }
+  .country-details section .info .row:nth-child(2) {
+    flex-wrap: nowrap;
+    height: 60vh;
+  }
+  .country-details section .info .row:nth-child(2) > div {
+    width: 100%;
+  }
+  .country-details section .info .border-countries {
+    flex-direction: column !important;
+    width: 100%;
+  }
+  .country-details section .info .border-countries .text {
+    width: 100%;
+    margin-right: 0 !important;
+  }
+  .country-details section .info .border-countries .value {
+    width: 100%;
+  }
+  .country-details section .info .border-countries .value > div {
+    margin-left: 0 !important;
+  }
+}
