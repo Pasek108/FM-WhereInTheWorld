@@ -1,4 +1,4 @@
-# Project Name
+# WhereInTheWorld
 Countries rest api challange from frontend mentor with guessing game.<br>
 See [live demo](https://weather-artur-pas.netlify.app).
 
