@@ -1,0 +1,276 @@
+.button {
+  background-color: var(--element-color);
+  color: var(--text-color);
+  border-radius: 0.25rem;
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.4);
+          box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.4);
+  text-align: center;
+  cursor: pointer;
+}
+.button:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.countries header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 7vh 0;
+}
+.countries header .buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.countries section {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 20vw 4vw 20vw 4vw 20vw 4vw 20vw;
+  grid-template-columns: repeat(4, 20vw);
+  -webkit-column-gap: 4vw;
+     -moz-column-gap: 4vw;
+          column-gap: 4vw;
+  row-gap: 4vw;
+}
+.countries section span {
+  position: absolute;
+  top: auto;
+  left: auto;
+  right: auto;
+  bottom: auto;
+  z-index: -1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 40vh;
+  width: 92vw;
+  font-size: 2rem;
+  font-weight: 800;
+}
+.searchbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: var(--element-color);
+  color: var(--text-color);
+  border-radius: 0.25rem;
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.4);
+          box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.4);
+  text-align: center;
+  cursor: pointer;
+  width: 30vw;
+  padding: 0 0.75rem;
+  font-size: 1rem;
+}
+.searchbar:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.searchbar:hover {
+  background-color: var(--element-color);
+}
+.searchbar i {
+  width: 10%;
+  text-align: center;
+  margin-right: 0.75rem;
+  color: var(--text-color);
+}
+.searchbar input {
+  background: none;
+  width: 90%;
+  padding: 0.75rem 0;
+  border: none;
+  font-size: 1rem;
+  color: var(--input-color);
+}
+.searchbar input:focus {
+  outline: none;
+}
+.sort,
+.filter {
+  position: relative;
+  top: auto;
+  left: auto;
+  right: auto;
+  bottom: auto;
+  z-index: 0;
+  font-weight: 600;
+}
+.sort.active .options,
+.filter.active .options {
+  display: block;
+}
+.sort.active .fa-caret-up,
+.filter.active .fa-caret-up {
+  display: inline-block !important;
+}
+.sort.active .fa-caret-down,
+.filter.active .fa-caret-down {
+  display: none !important;
+}
+.sort .select,
+.filter .select {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: var(--element-color);
+  border-radius: 0.25rem;
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.4);
+          box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.4);
+  text-align: center;
+  cursor: pointer;
+  color: var(--text-color);
+  min-width: 13rem;
+  padding: 0.75rem 1rem;
+  margin-left: 0.75rem;
+}
+.sort .select:hover,
+.filter .select:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.sort .select:hover,
+.filter .select:hover {
+  background-color: var(--element-color);
+}
+.sort .select .fa-caret-up,
+.filter .select .fa-caret-up {
+  margin-left: 1rem;
+  display: none;
+}
+.sort .select .fa-caret-down,
+.filter .select .fa-caret-down {
+  margin-left: 1rem;
+  display: inline-block;
+}
+.sort .options,
+.filter .options {
+  position: absolute;
+  top: 0;
+  left: 0.75rem;
+  right: auto;
+  bottom: auto;
+  z-index: -1;
+  background-color: var(--element-color);
+  width: calc(100% - 0.75rem);
+  padding-top: 3rem;
+  border-radius: 0.25rem;
+  -webkit-box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.2);
+  display: none;
+}
+.sort .options .divider,
+.filter .options .divider {
+  color: var(--text-color);
+  background-color: rgba(32, 162, 254, 0.595);
+  padding: 0.5rem 0.75rem;
+}
+.sort .options .option,
+.filter .options .option {
+  padding: 0.5rem 1.5rem;
+  cursor: pointer;
+}
+.sort .options .option:hover,
+.filter .options .option:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.sort .options .option.reset,
+.filter .options .option.reset {
+  border-bottom: 1px solid var(--text-color);
+}
+.country-card {
+  background-color: var(--element-color);
+  border-radius: 0.5rem;
+  width: 100%;
+  -webkit-box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+.country-card .flag {
+  width: 100%;
+  aspect-ratio: 1.7;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.country-card .info {
+  padding: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+.country-card .info .name {
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+.country-card .info .name:hover {
+  text-decoration: underline;
+}
+.country-card .info > div:not(.name) {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 1.75rem;
+}
+.country-card .info > div:not(.name) .text {
+  white-space: nowrap;
+  font-weight: 600;
+  margin-right: 0.5rem;
+}

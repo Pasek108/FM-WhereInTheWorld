@@ -1,0 +1,187 @@
+.button {
+  background-color: var(--element-color);
+  color: var(--text-color);
+  border-radius: 0.25rem;
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.4);
+          box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.4);
+  text-align: center;
+  cursor: pointer;
+}
+.button:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Nunito Sans", sans-serif;
+}
+body {
+  width: 100vw;
+  padding: 0;
+  margin: 0;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  overflow-x: hidden;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+body.light {
+  --bg-color: hsl(0, 0%, 98%);
+  --element-color: hsl(0, 0%, 100%);
+  --text-color: hsl(200, 15%, 8%);
+  --input-color: hsl(0, 0%, 52%);
+}
+body.dark {
+  --bg-color: hsl(207, 26%, 17%);
+  --element-color: hsl(209, 23%, 22%);
+  --text-color: hsl(0, 0%, 100%);
+  --input-color: hsl(0, 0%, 98%);
+}
+body::-webkit-scrollbar {
+  display: none;
+}
+.hidden {
+  display: none !important;
+}
+main {
+  width: 100vw;
+  height: calc(100vh - 4.5rem);
+  overflow-y: scroll;
+  padding: 4vw;
+  padding-top: 0;
+  margin-top: 4.5rem;
+}
+main.game_on .countries,
+main.game_on .country-details {
+  -webkit-filter: blur(8px);
+          filter: blur(8px);
+}
+main.game_on .game {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+main::-webkit-scrollbar {
+  width: 0.75rem;
+}
+main::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.4);
+}
+main::-webkit-scrollbar-thumb {
+  background: #0449d2;
+}
+main::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+@media only screen and (max-width: 1150px) {
+  .countries section {
+    -ms-grid-columns: (27.66vw)[3];
+    grid-template-columns: repeat(3, 27.66vw);
+  }
+  .country-details section {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .country-details section .flag {
+    width: 100%;
+  }
+  .country-details section .info {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 870px) {
+  .countries header {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .countries header .searchbar {
+    width: 100%;
+  }
+  .countries header .buttons {
+    width: 100%;
+    margin-top: 1rem;
+  }
+  .countries header .buttons .select {
+    min-width: 43vw !important;
+    margin-left: 0 !important;
+  }
+  .countries header .buttons .options {
+    left: 0 !important;
+    width: 100% !important;
+  }
+  .countries section {
+    -ms-grid-columns: (43vw)[2];
+    grid-template-columns: repeat(2, 43vw);
+  }
+  .game .options {
+    width: 90vw;
+  }
+  .game .options .option {
+    width: 40vw;
+  }
+  .game .controls {
+    width: 80vw !important;
+  }
+}
+@media only screen and (max-width: 560px) {
+  header .buttons > div:before {
+    width: 2rem;
+    text-align: center;
+    margin-right: 0 !important;
+  }
+  header .buttons > div:after {
+    display: none;
+  }
+  .countries section {
+    -ms-grid-columns: 90vw;
+    grid-template-columns: 90vw;
+  }
+  .country-details section {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .country-details section .flag {
+    width: 100%;
+  }
+  .country-details section .info .row:nth-child(2) {
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    height: 60vh;
+  }
+  .country-details section .info .row:nth-child(2) > div {
+    width: 100%;
+  }
+  .country-details section .info .border-countries {
+    -webkit-box-orient: vertical !important;
+    -webkit-box-direction: normal !important;
+        -ms-flex-direction: column !important;
+            flex-direction: column !important;
+    width: 100%;
+  }
+  .country-details section .info .border-countries .text {
+    width: 100%;
+    margin-right: 0 !important;
+  }
+  .country-details section .info .border-countries .value {
+    width: 100%;
+  }
+  .country-details section .info .border-countries .value > div {
+    margin-left: 0 !important;
+  }
+}

@@ -5,16 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Frontend Mentor | Countries API</title>
 
-    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap" rel="stylesheet" />
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
-    <link rel="stylesheet" href="style.css" />
+
+    <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="stylesheet" href="./styles/header.css" />
+    <link rel="stylesheet" href="./styles/countries.css" />
+    <link rel="stylesheet" href="./styles/country_details.css" />
+    <link rel="stylesheet" href="./styles/game.css" />
   </head>
 
   <body class="dark">
-    <header>
+    <!-- ----------- page header ----------- -->
+    <header class="page-header">
       <div class="logo">Where in the world?</div>
 
       <div class="buttons">
@@ -24,6 +32,7 @@
     </header>
 
     <main class="">
+      <!-- ----------- countries list ----------- -->
       <section class="countries">
         <header>
           <div class="searchbar">
@@ -75,6 +84,7 @@
         </section>
       </section>
 
+      <!-- ----------- country details ----------- -->
       <section class="country-details hidden">
         <header>
           <div class="back"><i class="fa-solid fa-arrow-left-long"></i> Back</div>
@@ -140,6 +150,7 @@
         </section>
       </section>
 
+      <!-- ----------- game ----------- -->
       <section class="game">
         <div class="close"><i class="fa-solid fa-xmark"></i> Close</div>
 
@@ -198,6 +209,7 @@
       </section>
     </main>
 
+    <!-- ----------- country card template ----------- -->
     <template class="country-card-template">
       <div class="country-card">
         <div class="flag"></div>
@@ -223,14 +235,14 @@
       </div>
     </template>
 
-    <script src="./js/Searchbar.js"></script>
-    <script src="./js/Sort.js"></script>
-    <script src="./js/Filter.js"></script>
-    <script src="./js/CountryDetails.js"></script>
-    <script src="./js/CountriesOverwiev.js"></script>
-    <script src="./js/CountriesAPI.js"></script>
-    <script src="./js/Game.js"></script>
-
-    <script src="./js/script.js" async></script>
+    <!-- ----------- scripts ----------- -->
+    <script src="./scripts/Searchbar.js"></script>
+    <script src="./scripts/Sort.js"></script>
+    <script src="./scripts/Filter.js"></script>
+    <script src="./scripts/CountryDetails.js"></script>
+    <script src="./scripts/CountriesOverwiev.js"></script>
+    <script src="./scripts/CountriesAPI.js"></script>
+    <script src="./scripts/Game.js"></script>
+    <script src="./scripts/script.js"></script>
   </body>
 </html>

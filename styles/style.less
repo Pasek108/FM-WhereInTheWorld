@@ -1,0 +1,205 @@
+@import url(./helper_functions.less);
+
+* {
+  box-sizing: border-box;
+  font-family: "Nunito Sans", sans-serif;
+}
+
+body {
+  width: 100vw;
+  padding: 0;
+  margin: 0;
+
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  overflow-x: hidden;
+
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+body.light {
+  --bg-color: hsl(0, 0%, 98%);
+  --element-color: hsl(0, 0%, 100%);
+  --text-color: hsl(200, 15%, 8%);
+  --input-color: hsl(0, 0%, 52%);
+}
+
+body.dark {
+  --bg-color: hsl(207, 26%, 17%);
+  --element-color: hsl(209, 23%, 22%);
+  --text-color: hsl(0, 0%, 100%);
+  --input-color: hsl(0, 0%, 98%);
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+.hidden {
+  display: none !important;
+}
+
+main {
+  width: 100vw;
+  height: calc(100vh - 4.5rem);
+  overflow-y: scroll;
+  padding: 4vw;
+  padding-top: 0;
+  margin-top: 4.5rem;
+
+  &.game_on {
+    .countries,
+    .country-details {
+      filter: blur(8px);
+    }
+
+    .game {
+      .flex(row, center, center);
+    }
+  }
+
+  &::-webkit-scrollbar {
+    width: 0.75rem;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.4);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: rgb(4, 73, 210);
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+}
+
+@media only screen and (max-width: 1150px) {
+  .countries {
+    section {
+      grid-template-columns: repeat(3, 27.66vw);
+    }
+  }
+
+  .country-details {
+    section {
+      flex-direction: column;
+
+      .flag {
+        width: 100%;
+      }
+
+      .info {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 870px) {
+  .countries {
+    header {
+      flex-direction: column;
+
+      .searchbar {
+        width: 100%;
+      }
+
+      .buttons {
+        width: 100%;
+        margin-top: 1rem;
+
+        .select {
+          min-width: 43vw !important;
+          margin-left: 0 !important;
+        }
+
+        .options {
+          left: 0 !important;
+          width: 100% !important;
+        }
+      }
+    }
+
+    section {
+      grid-template-columns: repeat(2, 43vw);
+    }
+  }
+
+  .game {
+    .options {
+      width: 90vw;
+
+      .option {
+        width: 40vw;
+      }
+    }
+
+    .controls {
+      width: 80vw !important;
+    }
+  }
+}
+
+@media only screen and (max-width: 560px) {
+  header {
+    .buttons > div {
+      &:before {
+        width: 2rem;
+        text-align: center;
+        margin-right: 0 !important;
+      }
+
+      &:after {
+        display: none;
+      }
+    }
+  }
+
+  .countries {
+    section {
+      grid-template-columns: 90vw;
+    }
+  }
+
+  .country-details {
+    section {
+      flex-direction: column;
+
+      .flag {
+        width: 100%;
+      }
+
+      .info {
+        .row:nth-child(2) {
+          flex-wrap: nowrap;
+          height: 60vh;
+
+          & > div {
+            width: 100%;
+          }
+        }
+
+        .border-countries {
+          flex-direction: column !important;
+          width: 100%;
+
+          .text {
+            width: 100%;
+            margin-right: 0 !important;
+          }
+
+          .value {
+            width: 100%;
+
+            & > div {
+              margin-left: 0 !important;
+            }
+          }
+        }
+      }
+    }
+  }
+}
