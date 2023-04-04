@@ -33,10 +33,10 @@ class Filter {
   optionOnClick(id) {
     const option = this.options[id].innerText;
 
-    let select_new_text = `Filter ${this.options[id].innerText}`;
-    if (option === "None") select_new_text = `Filter by Region`;
+    let select_new_text = `${this.options[id].innerText}`;
+    if (option === "None") select_new_text = `Filter <span>by Region</span>`;
 
-    this.select_text.innerText = select_new_text;
+    this.select_text.innerHTML = select_new_text;
 
     /* prettier-ignore */
     switch (id) {

@@ -34,10 +34,10 @@ class Sort {
   optionOnClick(id) {
     const option = this.options[id].innerText;
 
-    let select_new_text = `Sort ${this.options[id].innerText}`;
-    if (option === "None") select_new_text = `Sort alphabetically`;
+    let select_new_text = `${this.options[id].innerText}`;
+    if (option === "None") select_new_text = `Sort <span>alphabetically</span>`;
 
-    this.select_text.innerText = select_new_text;
+    this.select_text.innerHTML = select_new_text;
 
     /* prettier-ignore */
     switch (id) {

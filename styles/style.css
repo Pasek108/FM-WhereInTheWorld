@@ -146,6 +146,9 @@ main::-webkit-scrollbar-thumb:hover {
   header .buttons > div:after {
     display: none;
   }
+  .select span span {
+    display: none;
+  }
   .countries section {
     -ms-grid-columns: 90vw;
     grid-template-columns: 90vw;
