@@ -36,8 +36,8 @@ Additions:
 
 ### Links
 
-- Solution URL: [https://github.com/Pasek108/WhereInTheWorld/](https://github.com/Pasek108/WhereInTheWorld/)
-- Live Site URL: [https://pasek108.github.io/WhereInTheWorld/](https://pasek108.github.io/WhereInTheWorld/)
+- Solution URL: [https://github.com/Pasek108/FM-WhereInTheWorld/](https://github.com/Pasek108/FM-WhereInTheWorld/)
+- Live Site URL: [https://pasek108.github.io/FM-WhereInTheWorld/](https://pasek108.github.io/FM-WhereInTheWorld/)
 
 ### Built with
 
