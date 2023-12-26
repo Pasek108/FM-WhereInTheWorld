@@ -2,25 +2,22 @@
 
 This is a solution to the [REST Countries API with color theme switcher challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/rest-countries-api-with-color-theme-switcher-5cacc469fec04111f7b848ca). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
 
-My addition is sorting coutries by name or population and guessing game that allows user guess names, flags and capital
-
 ![](./screenshot.png)
 
 ## Overview
 
 ### The challenge
 Users should be able to:
-
 - See all countries from the API on the homepage
 - Search for a country using an `input` field
 - Filter countries by region
 - Click on a country to see more detailed information on a separate page
 - Click through to the border countries on the detail page
-- Toggle the color scheme between light and dark mode *(optional)*
+- Toggle the color scheme between light and dark mode 
 
-Additions:
-- Sorting by name or population
-- Countries guessing game (names, flags, capital)
+My own addition is: 
+- Sorting coutries by name or population
+- Countiries guessing game (names, flags, capitals)
 
 ### Built with
 - HTML5
