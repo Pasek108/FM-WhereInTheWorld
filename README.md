@@ -4,19 +4,11 @@ This is a solution to the [REST Countries API with color theme switcher challeng
 
 My addition is sorting coutries by name or population and guessing game that allows user guess names, flags and capital
 
-## Table of contents
-
-- [Overview](#overview)
-  - [The challenge](#the-challenge)
-  - [Screenshot](#screenshot)
-  - [Links](#links)
-  - [Built with](#built-with)
-- [Author](#author)
+![](./screenshot.png)
 
 ## Overview
 
 ### The challenge
-
 Users should be able to:
 
 - See all countries from the API on the homepage
@@ -30,22 +22,15 @@ Additions:
 - Sorting by name or population
 - Countries guessing game (names, flags, capital)
 
-### Screenshot
-
-![](./screenshot.png)
+### Built with
+- HTML5
+- LESS
+- JS ES2018
 
 ### Links
-
 - Solution URL: [https://github.com/Pasek108/FM-WhereInTheWorld/](https://github.com/Pasek108/FM-WhereInTheWorld/)
 - Live Site URL: [https://pasek108.github.io/FM-WhereInTheWorld/](https://pasek108.github.io/FM-WhereInTheWorld/)
 
-### Built with
-
-- HTML5
-- LESS
-- JS (ECMAScript 2018)
-
 ## Author
-
 - Website - [Artur Pas](https://pas-artur.000webhostapp.com)
 - Frontend Mentor - [@Pasek108](https://www.frontendmentor.io/profile/Pasek108)
