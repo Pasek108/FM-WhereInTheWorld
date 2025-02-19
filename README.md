@@ -136,8 +136,6 @@ A simple thank-you message.
 
 
 ## Performance
-> [!WARNING]  
-> The accessibility score is lower because of the design's color contrast.
 
 ### Desktop
 ![desktop performance](/_for_readme/desktop-performance.png)
