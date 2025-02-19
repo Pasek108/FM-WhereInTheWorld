@@ -40,7 +40,23 @@ class CountriesAPI {
 
         this.searchByName("");
         countries_overview.addCountries(this.search_name, this.current_sort, this.current_filter);
-      });
+      })
+      .catch((error) => this.getCountriesFromFile());
+  }
+
+  getCountriesFromFile() {
+    fetch("countries_v3.1.json")
+      .then((response) => response.json())
+      .then((data) => {
+        this.countries = data;
+        
+        this.fillAbbreviations();
+        this.fillSortArrays();
+        this.fillRegionsArrays();
+
+        this.searchByName("");
+        countries_overview.addCountries(this.search_name, this.current_sort, this.current_filter);
+      })
   }
 
   fillAbbreviations() {
