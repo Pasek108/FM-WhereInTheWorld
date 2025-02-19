@@ -15,8 +15,8 @@ class Game {
     this.loadQuestionDOMReferences();
     this.initGameStats();
 
-    this.correct_sound = new Audio("./../sounds/correct.mp3");
-    this.wrong_sound = new Audio("./../sounds/wrong.mp3");
+    this.correct_sound = new Audio("sounds/correct.mp3");
+    this.wrong_sound = new Audio("sounds/wrong.mp3");
   }
 
   hide() {
