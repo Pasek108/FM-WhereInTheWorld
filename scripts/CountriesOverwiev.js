@@ -25,10 +25,10 @@ class CountriesOverview {
       let is_searched = false;
 
       for (let j = 0; j < search.length; j++) {
-        if (i === search[j]) {
-          is_searched = true;
-          break;
-        }
+        if (i != search[j]) continue;
+
+        is_searched = true;
+        break;
       }
 
       if (!is_searched) continue;
@@ -68,3 +68,5 @@ class CountriesOverview {
     return new_card;
   }
 }
+
+const countries_overview = new CountriesOverview();

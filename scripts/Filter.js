@@ -52,3 +52,5 @@ class Filter {
     countries_overview.addCountries(countries_api.search_name, countries_api.current_sort, countries_api.current_filter);
   }
 }
+
+const filter = new Filter();

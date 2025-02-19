@@ -11,17 +11,19 @@
   background-color: rgba(0, 0, 0, 0.1);
 }
 .game {
-  position: fixed;
-  top: 0;
+  position: absolute;
+  top: 4.5rem;
   left: 0;
   right: auto;
   bottom: auto;
-  z-index: 0;
+  z-index: auto;
   background-color: var(--bg-color);
   width: 100vw;
-  height: 100vh;
-  padding: 4vw;
+  height: calc(100vh - 4.5rem);
+  padding: 3rem;
+  padding-bottom: 4rem;
   display: none;
+  overflow-y: scroll;
 }
 .game .options {
   display: -webkit-box;
@@ -62,7 +64,11 @@
           box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.4);
   text-align: center;
   cursor: pointer;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
   width: 20vw;
+  min-width: 15rem;
   padding: 1rem;
   margin: 0.5rem;
   font-size: 1.1rem;
@@ -115,7 +121,7 @@
   background-color: rgba(0, 0, 0, 0.1) !important;
 }
 .game .question:not(.hidden) header {
-  margin-top: 10vh;
+  margin-top: 6vh;
   font-size: 3rem;
   font-weight: 800;
   text-align: center;
@@ -148,7 +154,7 @@
 }
 .close {
   position: absolute;
-  top: 17vh;
+  top: 4vh;
   left: 4vw;
   right: auto;
   bottom: auto;
@@ -192,9 +198,9 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -262,7 +268,8 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 50vw;
+  gap: 1rem;
+  width: 100%;
   margin-top: 3rem;
 }
 .controls > div {
@@ -286,6 +293,11 @@
           box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.4);
   text-align: center;
   cursor: pointer;
+  width: 30%;
+  max-width: 15rem;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
   padding: 0.75rem 1rem;
   font-size: 1rem;
   font-weight: 600;

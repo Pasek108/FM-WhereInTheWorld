@@ -26,3 +26,5 @@ class Searchbar {
     }
   }
 }
+
+const searchbar = new Searchbar();

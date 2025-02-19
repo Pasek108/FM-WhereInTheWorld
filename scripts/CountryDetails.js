@@ -117,15 +117,17 @@ class CountryDetails {
       const abbrs = countries_api.abbreviations;
 
       for (let i = 0; i < abbrs.length; i++) {
-        if (border_country === abbrs[i]) {
-          const country = document.createElement("div");
-          country.addEventListener("click", () => this.openDetails(countries_api.countries[i]));
-          country.innerText = country_details.getName(countries_api.countries[i]);
+        if (border_country != abbrs[i]) continue;
 
-          this.border_countries.appendChild(country);
-          break;
-        }
+        const country = document.createElement("div");
+        country.addEventListener("click", () => this.openDetails(countries_api.countries[i]));
+        country.innerText = country_details.getName(countries_api.countries[i]);
+
+        this.border_countries.appendChild(country);
+        break;
       }
     }
   }
 }
+
+const country_details = new CountryDetails();

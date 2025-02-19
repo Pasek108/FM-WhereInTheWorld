@@ -113,3 +113,5 @@ class CountriesAPI {
     countries_overview.addCountries(this.search_name, this.current_sort, this.current_filter);
   }
 }
+
+const countries_api = new CountriesAPI();

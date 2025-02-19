@@ -1,12 +1,14 @@
 @import url(./helper_functions.less);
 
 .game {
-  .position(fixed, 0, 0, @z-index: 0);
+  .position(absolute, 4.5rem, 0);
   background-color: var(--bg-color);
   width: 100vw;
-  height: 100vh;
-  padding: 4vw;
+  height: calc(100vh - 4.5rem);
+  padding: 3rem;
+  padding-bottom: 4rem;
   display: none;
+  overflow-y: scroll;
 
   .options {
     .flex(row, center, center);
@@ -16,7 +18,9 @@
     .option {
       .flex(row, center, center);
       .button();
+      flex-grow: 1;
       width: 20vw;
+      min-width: 15rem;
       padding: 1rem;
       margin: 0.5rem;
       font-size: 1.1rem;
@@ -54,7 +58,7 @@
     }
 
     header {
-      margin-top: 10vh;
+      margin-top: 6vh;
       font-size: 3rem;
       font-weight: 800;
       text-align: center;
@@ -81,7 +85,7 @@
 }
 
 .close {
-  .position(absolute, 17vh, 4vw);
+  .position(absolute, 4vh, 4vw);
   .flex(row, space-between, center);
   .button();
   min-width: 7.5vw;
@@ -95,7 +99,7 @@
 }
 
 .start {
-  .flex(column, center, center);
+  .flex(column, start, center);
 
   header {
     margin: 5vh 0;
@@ -131,12 +135,16 @@
 
 .controls {
   .flex(row, space-between, center);
-  width: 50vw;
+  gap: 1rem;
+  width: 100%;
   margin-top: 3rem;
 
   & > div {
     .flex(row, center, center);
     .button();
+    width: 30%;
+    max-width: 15rem;
+    flex-grow: 1;
     padding: 0.75rem 1rem;
     font-size: 1rem;
     font-weight: 600;
