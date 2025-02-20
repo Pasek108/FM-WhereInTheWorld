@@ -111,29 +111,90 @@ I do not own the rights to the content of the challenges. All challenge data was
 # Details :scroll:
 
 ## User interface
-### Countries overview
-![countries overview](/_for_readme/UI/countries-overview.png)
-The first step requires the user to input their name, email, and phone number. The provided values are properly validated before proceeding to the next step. 
+### Header  
+![header](/_for_readme/UI/header.png)  
+The header contains the logo on the left and buttons on the right.
 
-### Country details
-![country details](/_for_readme/UI/country-details.png)
-In the second step, the user can select a plan and change the billing period.
+The buttons are:  
+- **Game** – Starts a country guessing game.  
+- **Light/Dark mode** – Switches the page's color scheme.
 
-### Filtering and sorting
-![filter](/_for_readme/UI/filter.png)
-The third step allows the user to pick additional options, with pricing dependent on the previously selected billing period.
+---
 
-### Game select
-![game select](/_for_readme/UI/game-select.png)
-The fourth step is a summary of the user’s choices. It displays the selected options and the total price. The user can still go back and make changes.
+### Countries Overview  
+![filtering](/_for_readme/UI/filtering.png)  
+At the top, there is a filtering section. Users can search for text within country data, sort countries by name or population, and filter them by region.
 
-### Game
-![wrong answer](/_for_readme/UI/wrong-answer.png)
-A simple thank-you message.
+<br>
 
-![game](/_for_readme/UI/game.png)
-A simple thank-you message.
+![countries](/_for_readme/UI/countries.png)  
 
+![countries](/_for_readme/UI/countries-light-theme.png)  
+Below, a list of all countries that meet the selected filter criteria is displayed.
+
+Countries are shown as cards containing:  
+- Flag  
+- Name  
+- Population  
+- Region  
+- Capital  
+
+Clicking on a country's name navigates the user to the country's details page.
+
+---
+
+### Country Details  
+![country details](/_for_readme/UI/country-details.png)  
+The country details page includes:  
+- Flag  
+- Name  
+- Native Name  
+- Population  
+- Region  
+- Subregion  
+- Capital  
+- Top-Level Domain  
+- Currencies  
+- Languages  
+- Border Countries  
+
+Clicking on a border country navigates the user to that country's details page.
+
+---
+
+### Game  
+![game select](/_for_readme/UI/game-select.png)  
+Clicking the "Game" button in the header opens the game selection menu.
+
+The menu displays a points counter, as well as counters for correct and incorrect answers. Below, users can select a game mode:
+
+- **Name by Flag**  
+
+  ![name by flag](/_for_readme/UI/name-by-flag.png)  
+
+- **Name by Capital**  
+
+  ![name by capital](/_for_readme/UI/name-by-capital.png)  
+
+- **Flag by Name**  
+
+  ![flag by name](/_for_readme/UI/flag-by-name.png)  
+
+- **Flag by Capital**  
+
+  ![flag by capital](/_for_readme/UI/flag-by-capital.png)  
+
+- **Capital by Name**  
+
+  ![capital by name](/_for_readme/UI/capital-by-name.png)  
+
+- **Capital by Flag**  
+
+  ![capital by flag](/_for_readme/UI/capital-by-flag.png)  
+
+Users must answer the question by selecting one of four available options.  
+- If the answer is **incorrect**, a wrong sound plays, the chosen answer is marked in red, and the correct answer is highlighted in green.  
+- If the answer is **correct**, a correct sound plays, and the selected option is marked in green. The next question is then unlocked.  
 
 ## Performance
 
